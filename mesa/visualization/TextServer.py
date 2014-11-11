@@ -72,7 +72,6 @@ Client -> Server:
 '''
 
 import os
-
 import tornado.ioloop
 import tornado.template
 import tornado.web
@@ -237,7 +236,8 @@ class TextServer(object):
     def run_model(self):
         '''
         Run the model forward and store each viz state.
-        #TODO: Have this run concurrently (I think) inside the event loop?
+        #TODO: Have this run concurrently (I think) inside the event loop
+        the work goes here. some kind of buffer then serve then concurrent serving
         '''
         while self.model.schedule.steps < self.max_steps and self.model.running:
             self.model.step()
